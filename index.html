@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="fonts/font-awesome-4.7.0/css/font-awesome.min.css"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <!-- My CSS -->
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <!-- BT1 -->
+    <selector id="quanlytuyensinh">
+      <h1>QUẢN LÝ TUYỂN SINH</h1>
+      <form class="contact100-form">
+        <!-- data-validate="Name is required" -->
+        <div class="wrap-input100">
+          <h2>Điểm chuẩn hội đồng</h2>
+          <input
+            class="input100"
+            type="text"
+            name="name"
+            id="diemChuan"
+            placeholder="Điểm chuẩn ..."
+          />
+          <span class="focus-input100"></span>
+        </div>
+        <!-- data-validate="Name is required" -->
+        <div class="wrap-input100">
+          <h2>Tổng điểm ba môn</h2>
+          <input
+            class="input100"
+            type="text"
+            name="name"
+            placeholder="Tổng điểm ba môn ..."
+            id="tongDiemBaMon"
+          />
+          <span class="focus-input100"></span>
+        </div>
+        <!-- data-validate="Name is required" -->
+        <div class="wrap-input100 S">
+          <h2>Nhập điểm khu vực</h2>
+          <select
+            class="form-select"
+            id="diemKhuVuc"
+            aria-label="Default select example"
+          >
+            <option selected>Chọn khu vực ưu tiên</option>
+            <option value="2">Khu vực A</option>
+            <option value="1">Khu vực B</option>
+            <option value="0.5">Khu vực C</option>
+            <option value="0">Không thuộc khu vực ưu tiên</option>
+          </select>
+        </div>
+        <!-- data-validate="Name is required" -->
+        <div class="wrap-input100 validate-input">
+          <h2>Nhập điểm đối tượng dự thi</h2>
+          <select
+            class="form-select"
+            id="diemDoiTuong"
+            aria-label="Default select example"
+          >
+            <option selected>Chọn đối tượng ưu tiên</option>
+            <option value="2.5">Đối tượng A</option>
+            <option value="2">Đối tượng B</option>
+            <option value="1">Đối tượng C</option>
+            <option value="0">Không thuộc đối tượng ưu tiên</option>
+          </select>
+        </div>
+
+        <button
+          onclick="tinhDiemTuyenSinh()"
+          id="tinhDiem"
+          class="form-control w-25"
+        >
+          Tính
+        </button>
+        <div class="mt-2 alert alert-success">
+          Số điểm đạt được : <span id="diemDatDuoc"></span>
+        </div>
+        <div class="mt-2 alert alert-success">
+          Kết quả xét tuyển : <span id="ketQua"></span>
+        </div>
+      </form>
+    </selector>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./index.js"></script>
+  </body>
+</html>
