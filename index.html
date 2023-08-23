@@ -27,78 +27,162 @@
     <!-- BT1 -->
     <selector id="quanlytuyensinh">
       <h1>QUẢN LÝ TUYỂN SINH</h1>
-      <form class="contact100-form">
-        <!-- data-validate="Name is required" -->
+
+      <!-- data-validate="Name is required" -->
+      <div class="wrap-input100">
+        <h2>Điểm chuẩn hội đồng</h2>
+        <input
+          class="input100"
+          type="text"
+          name="name"
+          id="diemChuan"
+          placeholder="Điểm chuẩn ..."
+        />
+        <span class="focus-input100"></span>
+      </div>
+      <!-- data-validate="Name is required" -->
+      <div class="wrap-input100">
+        <h2>Tổng điểm ba môn</h2>
+        <input
+          class="input100"
+          type="text"
+          name="name"
+          placeholder="Tổng điểm ba môn ..."
+          id="tongDiemBaMon"
+        />
+        <span class="focus-input100"></span>
+      </div>
+      <!-- data-validate="Name is required" -->
+      <div class="wrap-input100 S">
+        <h2>Nhập điểm khu vực</h2>
+        <select
+          class="form-select"
+          id="diemKhuVuc"
+          aria-label="Default select example"
+        >
+          <option selected>Chọn khu vực ưu tiên</option>
+          <option value="2">Khu vực A</option>
+          <option value="1">Khu vực B</option>
+          <option value="0.5">Khu vực C</option>
+          <option value="0">Không thuộc khu vực ưu tiên</option>
+        </select>
+      </div>
+      <!-- data-validate="Name is required" -->
+      <div class="wrap-input100 validate-input">
+        <h2>Nhập điểm đối tượng dự thi</h2>
+        <select
+          class="form-select"
+          id="diemDoiTuong"
+          aria-label="Default select example"
+        >
+          <option selected>Chọn đối tượng ưu tiên</option>
+          <option value="2.5">Đối tượng A</option>
+          <option value="2">Đối tượng B</option>
+          <option value="1">Đối tượng C</option>
+          <option value="0">Không thuộc đối tượng ưu tiên</option>
+        </select>
+      </div>
+
+      <button
+        onclick="tinhDiemTuyenSinh()"
+        id="tinhDiem"
+        class="form-control w-25"
+        type="button"
+      >
+        Tính
+      </button>
+      <div class="mt-2 alert alert-success">
+        Số điểm đạt được : <span id="diemDatDuoc"></span>
+      </div>
+      <div class="mt-2 alert alert-success">
+        Kết quả xét tuyển : <span id="ketQua"></span>
+      </div>
+    </selector>
+    <!-- Bài Tập 2 -->
+    <div class="container">
+      <h2>TÍNH TIỀN ĐIỆN</h2>
+      <div class="form-group">
+        <p>Tên</p>
+        <input id="tenNguoiDung" class="form-control w-25" />
+      </div>
+      <br />
+      <div class="form-group">
+        <p>Số Kw</p>
+        <input id="soKw" class="form-control w-25" />
+      </div>
+      <br />
+      <button
+        onclick="tinhTong()"
+        id="tinhTien"
+        class="btn btn-outline-success"
+      >
+        Tính tiền
+      </button>
+      <div class="mt-2 alert alert-success">
+        <span id="tinhTienDien"></span>
+      </div>
+    </div>
+    <!-- Bài Tập 3 -->
+    <div class="container">
+      <h2>TÍNH THUẾ THU NHẬP</h2>
+      <div class="form-group">
+        <p>Họ và Tên</p>
+        <input id="userNguoiDung" class="form-control w-25" />
+      </div>
+      <br />
+      <div class="form-group">
+        <p>Tổng thu nhập năm</p>
+        <input id="thuNhapNam" class="form-control w-25" />
+      </div>
+      <br />
+      <div class="form-group">
+        <p>Số người phụ thuộc</p>
+        <input id="soNguoiPhuThuoc" class="form-control w-25" />
+      </div>
+
+      <br />
+      <button onclick="tinhThue()" id="btnTinhTong" class="form-control w-25">
+        Trung bình
+      </button>
+      <div class="mt-2 alert alert-success">
+        <span id="tinhTienThue"></span>
+      </div>
+    </div>
+    <!-- Bài Tập 4 -->
+    <div class="container">
+      <div class="wrap-input100 S">
+        <h2>Tính tiền cáp</h2>
+        <select
+          class="form-select"
+          id="loaiKhachHang"
+          aria-label="Default select example"
+        >
+          <option value="7.5" id="nhaDan">Nhà dân</option>
+          <option value="50" id="doanhNghiep">Doanh nghiệp</option>
+        </select>
         <div class="wrap-input100">
-          <h2>Điểm chuẩn hội đồng</h2>
+          <h2>Số kênh thuê</h2>
           <input
             class="input100"
             type="text"
             name="name"
-            id="diemChuan"
+            id="kenhThue"
             placeholder="Điểm chuẩn ..."
           />
           <span class="focus-input100"></span>
         </div>
-        <!-- data-validate="Name is required" -->
-        <div class="wrap-input100">
-          <h2>Tổng điểm ba môn</h2>
-          <input
-            class="input100"
-            type="text"
-            name="name"
-            placeholder="Tổng điểm ba môn ..."
-            id="tongDiemBaMon"
-          />
-          <span class="focus-input100"></span>
-        </div>
-        <!-- data-validate="Name is required" -->
-        <div class="wrap-input100 S">
-          <h2>Nhập điểm khu vực</h2>
-          <select
-            class="form-select"
-            id="diemKhuVuc"
-            aria-label="Default select example"
-          >
-            <option selected>Chọn khu vực ưu tiên</option>
-            <option value="2">Khu vực A</option>
-            <option value="1">Khu vực B</option>
-            <option value="0.5">Khu vực C</option>
-            <option value="0">Không thuộc khu vực ưu tiên</option>
-          </select>
-        </div>
-        <!-- data-validate="Name is required" -->
-        <div class="wrap-input100 validate-input">
-          <h2>Nhập điểm đối tượng dự thi</h2>
-          <select
-            class="form-select"
-            id="diemDoiTuong"
-            aria-label="Default select example"
-          >
-            <option selected>Chọn đối tượng ưu tiên</option>
-            <option value="2.5">Đối tượng A</option>
-            <option value="2">Đối tượng B</option>
-            <option value="1">Đối tượng C</option>
-            <option value="0">Không thuộc đối tượng ưu tiên</option>
-          </select>
-        </div>
-
-        <button
-          onclick="tinhDiemTuyenSinh()"
-          id="tinhDiem"
-          class="form-control w-25"
-        >
-          Tính
-        </button>
-        <div class="mt-2 alert alert-success">
-          Số điểm đạt được : <span id="diemDatDuoc"></span>
-        </div>
-        <div class="mt-2 alert alert-success">
-          Kết quả xét tuyển : <span id="ketQua"></span>
-        </div>
-      </form>
-    </selector>
-
+      </div>
+      <button
+        onclick="tinhTienCap()"
+        id="btnTinhTong"
+        class="form-control w-25"
+      >
+        TÍnh tiền
+      </button>
+      <div class="mt-2 alert alert-success">
+        <span id="tienCap"></span>
+      </div>
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
